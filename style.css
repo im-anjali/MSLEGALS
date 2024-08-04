@@ -1,0 +1,424 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#vanta-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100vh;
+}
+h1{
+  text-align: center;
+  color: aliceblue;
+  margin-top: 50px;
+}
+.logo1 img{
+  height: 8rem;
+  margin-top: 50px;
+}
+.logo1{
+  display: flex;
+  justify-content: center;
+   cursor: pointer;
+}
+.container,
+.container1,
+.container2 {
+    width: 100%; /* Full width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-top: 40px;
+}
+
+.eventbig {
+    margin-top: 20px;
+    border: 2px solid white;
+    width: 60vw; /* Width as 60% of the viewport width */
+    min-height: 60vh; /* Minimum height as 60% of the viewport height */
+    color: aliceblue;
+    padding: 40px; /* Optional padding */
+    box-sizing: border-box;
+    backdrop-filter: blur(10px); /* Apply the blur effect */
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    text-align: center; /* Center text within the element */
+    border-radius: 20px;
+}
+
+.events {
+    font-size: 1.4rem;
+    color: azure;
+    font-family: 'Azonix', sans-serif;
+   
+}
+
+.eventpara {
+    margin-top: 20px;
+    font-size: 1.3rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.eventpara ul{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.registration-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.registration-table th,
+.registration-table td {
+    border: 1px solid white; /* White border */
+    padding: 8px;
+    text-align: left;
+    color: aliceblue;
+    text-align: center;
+}
+.moreText {
+    display: none;
+}
+
+
+/* General button styles */
+#readMoreBtn1, #readLessBtn1, #readMoreBtn2, #readLessBtn2, #readMoreBtn3, #readLessBtn3 {
+    position: relative;
+    color: white;
+    border: none;
+    z-index: 2;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 4px;
+    outline: none;
+    height: 50px;
+    font-size: 1.2rem;
+    background-color: transparent;
+    width: 40%;
+    margin-left: 30%;
+
+}
+
+/* Pseudo-elements for buttons */
+
+#readMoreBtn2:before, #readMoreBtn2:after,
+#readLessBtn2:before, #readLessBtn2:after
+ {
+    position: absolute;
+    content: "";
+    width: 20%;
+    height: 20%;
+    border: 1px solid;
+    z-index: -1;
+    transition: all 0.3s ease;
+}
+
+/* Before pseudo-element for buttons */
+#readMoreBtn1:before, #readLessBtn1:before,
+#readMoreBtn2:before, #readLessBtn2:before,
+#readMoreBtn3:before, #readLessBtn3:before {
+    top: 0;
+    left: 0;
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+    border-top-color: #00aced;
+    border-left-color: #00aced;
+}
+
+/* After pseudo-element for buttons */
+#readMoreBtn1:after, #readLessBtn1:after,
+#readMoreBtn2:after, #readLessBtn2:after,
+#readMoreBtn3:after, #readLessBtn3:after {
+    bottom: 0;
+    right: 0;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-bottom-color: #00aced;
+    border-right-color: #00aced;
+}
+
+/* Hover effects for buttons */
+#readMoreBtn1:hover:before, #readMoreBtn1:hover:after,
+#readLessBtn1:hover:before, #readLessBtn1:hover:after,
+#readMoreBtn2:hover:before, #readMoreBtn2:hover:after,
+#readLessBtn2:hover:before, #readLessBtn2:hover:after,
+#readMoreBtn3:hover:before, #readMoreBtn3:hover:after,
+#readLessBtn3:hover:before, #readLessBtn3:hover:after {
+    border-color: #00aced;
+    height: 100%;
+    width: 100%;
+    box-shadow: 0 0 5px #00aced, 0 0 5px #00aced inset;
+}
+
+/* Hover effects for buttons */
+#readMoreBtn1:hover, #readLessBtn1:hover,
+#readMoreBtn2:hover, #readLessBtn2:hover,
+#readMoreBtn3:hover, #readLessBtn3:hover {
+    cursor: pointer;
+    background-color: rgb(97, 98, 100);
+}
+
+
+.toggleContent {
+    display: none; /* Initially hide the additional content */
+}
+
+.toggleBtn.hide {
+    display: none; /* Initially hide the "Read Less" button */
+}
+
+.toggleBtn {
+    background-color: transparent;
+    border: 1px solid white;
+    color:white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 4px ;
+    outline: none;
+    border: 2px solid white ;
+    height: 50px;
+    font-size: 1rem;
+
+}
+
+
+
+@font-face {
+  font-family: 'Azonix';
+  src: url('./Azonix.otf') format('opentype');
+}
+@media screen and (max-width:1200px) {
+  .container1{
+    width: 100%;
+  }
+
+  .eventbig{
+    width: 90%;
+  }
+  
+}
+/* Navbar */
+/* Navbar */
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+body {
+  font-family: "Oswald", sans-serif;
+  margin: 0;
+  padding: 0;
+  color: white;
+  overflow-x: hidden;
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+#vanta-canvas {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/* Navbar styles */
+
+.checkbox {
+  display: none;
+}
+
+.navbar-icon{
+  height: 3rem;
+  width: 3rem;
+  z-index: 999;
+  display: inline-block;
+}
+
+.msLink{
+  position: absolute;
+  top: 3vh;
+  left: 5vw;
+  z-index: 10000;
+}
+
+.button {
+  position: relative;
+  background-color: rgba(59, 59, 59, 0.571);
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  position: fixed;
+  top: 3vh;
+  right: 5vw;
+  z-index: 2000;
+  box-shadow: 0 1rem 3rem black;
+  text-align: center;
+  cursor: pointer;
+}
+.nav-elements {
+  display: none;
+}
+
+.background {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  right: 0;
+  transform: translateX(100%);
+  z-index: 100;
+  backdrop-filter: blur(10px);
+  background-color: rgba(52, 52, 52, 0.229);
+  transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1);
+  pointer-events: none;
+}
+
+.nav {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: -60vw;
+  z-index: 1500;
+  opacity: 0;
+  width: 0;
+  transition: all 0.4s;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  text-align: center;
+  width: fit-content;
+  margin: auto;
+  padding: 10px;
+}
+
+.item {
+  margin: 8px;
+}
+
+.link {
+  display: inline-block;
+  font-size: 1rem;
+  padding: 5px 3px;
+  color: white;
+  text-decoration: none;
+  font-family: "Nunito", sans-serif;
+  text-transform: uppercase;
+  background-size: 220%;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  display: block;
+  margin-top: 5px;
+  left: 0;
+  background: white;
+  transition: width 0.3s ease, left 0.3s ease;
+  -webkit-transition: width 0.3s ease, left 0.3s ease;
+}
+
+.link:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.link:not(:hover)::after {
+  width: 0;
+  left: 0;
+}
+
+.checkbox:checked ~ .background {
+  transform: translateX(0);
+}
+.checkbox:checked ~ .nav {
+  opacity: 1;
+  width: 100%;
+  right: 0;
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.icon,
+.icon::before,
+.icon::after {
+  width: 1.2rem;
+  height: 2px;
+  background-color: white;
+  display: inline-block;
+}
+
+.icon::before,
+.icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  transition: all 0.3s;
+}
+
+.icon::before {
+  top: -0.5rem;
+}
+.icon::after {
+  top: 0.5rem;
+}
+
+.button:hover icon:before {
+  top: -0.8rem;
+}
+.button:hover icon::after {
+  top: 0.8rem;
+}
+
+.checkbox:checked + .button .icon {
+  background-color: transparent;
+}
+
+.checkbox:checked + .button .icon::before {
+  top: 0;
+  transform: rotate(135deg);
+}
+.checkbox:checked + .button .icon::after {
+  top: 0;
+  transform: rotate(-135deg);
+}
+
+.checkbox:checked body {
+  overflow-y: hidden;
+}
+
+@media screen and (max-width: 680px) {
+  .nav-elements {
+    display: flex !important;
+  }
+}
+
+/* Navbar styles end here */
